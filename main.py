@@ -9,7 +9,7 @@ import google.generativeai as genai
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
-newsapi = "962f51b32e4340158e556674422433a2"
+newsapi = "your_api_key"
 
 
 
@@ -20,7 +20,7 @@ def speak(text):
     engine.runAndWait()
     
 def aiProcess(command):
-    genai.configure(api_key="AIzaSyCCiUC5VY9wGtSLyoacU844awZbQ24bmTs")
+    genai.configure(api_key="your_api_key")
     model = genai.GenerativeModel("gemini-1.5-flash",
     system_instruction = "you are a helpful assistant name jarvis that respond in short answers not more than 50 words without using * ")
     response = model.generate_content(command)
@@ -37,7 +37,7 @@ def processCommand(c):
     elif "open formulaone" in c.lower():
         webbrowser.open("https://www.formula1.com/")    
     elif "open codechef" in c.lower():
-        webbrowser.open("https://www.codechef.com/users/mayanksingh_x1")
+        webbrowser.open("https://www.codechef.com")
     elif "hello" in c.lower():
         speak("hi how are you?")
     # elif "thanks" in c.lower():
